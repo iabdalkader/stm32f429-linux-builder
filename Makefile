@@ -52,8 +52,7 @@ clean-rootfs:
 
 .PHONY += install
 include mk/flash.mak
-install: $(TARGETS)
-	$(shell ${FLASH_CMD})
+install: FLASH_CMD
 
 .PHONY += clean
 clean: clean-uboot clean-kernel clean-rootfs
