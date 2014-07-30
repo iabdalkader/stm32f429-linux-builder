@@ -20,15 +20,18 @@
 # /bin/echo -e '\033[9;0]\033[14;0]' > /dev/console
 
 # enable the board leds
-/bin/echo 109 > /sys/class/gpio/export
-/bin/echo 110 > /sys/class/gpio/export
+/bin/echo 20 > /sys/class/gpio/export
+/bin/echo 21 > /sys/class/gpio/export
+/bin/echo 22 > /sys/class/gpio/export
 
 # set the board leds as output
-/bin/echo high > /sys/class/gpio/gpio109/direction
-/bin/echo high > /sys/class/gpio/gpio110/direction
+/bin/echo out > /sys/class/gpio/gpio20/direction
+/bin/echo out > /sys/class/gpio/gpio21/direction
+/bin/echo out > /sys/class/gpio/gpio22/direction
 
 # clear the board leds
-/bin/echo 0 > /sys/class/gpio/gpio109/value
-/bin/echo 0 > /sys/class/gpio/gpio110/value
+/bin/echo 1 > /sys/class/gpio/gpio20/value
+/bin/echo 1 > /sys/class/gpio/gpio21/value
+/bin/echo 1 > /sys/class/gpio/gpio22/value
 
 exit 0
